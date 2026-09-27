@@ -1,0 +1,22 @@
+[Unit]
+Description=DPM Registry
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dpm-registry
+Group=dpm-registry
+StateDirectory=dpm-registry
+WorkingDirectory=/var/lib/dpm-registry
+ExecStart=/usr/local/bin/dpm-registry -config /etc/dpm-registry/config.json -listen 127.0.0.1:4873
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/dpm-registry
+
+[Install]
+WantedBy=multi-user.target

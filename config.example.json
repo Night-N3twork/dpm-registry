@@ -1,0 +1,6 @@
+{
+  "data_dir": "/var/lib/dpm-registry/data",
+  "public_url": "https://registry.dusk.night-x.com",
+  "read_auth": false,
+  "tokens": []
+}
